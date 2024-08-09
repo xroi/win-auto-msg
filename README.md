@@ -8,7 +8,13 @@ background/foreground windows.
 
 In windows, communication with applications is done by passing messages to them. A message is simply a numeric code that
 designates a particular event. For example, if the user presses the left mouse button, the window receives a message
-that has the following message code. Usually, that message is sent to the foreground window. This application allows
+that has the following message code.
+
+```
+#define WM_LBUTTONDOWN    0x0201
+```
+
+Usually, that message is sent to the foreground window. This application allows
 sending messages to any open window. This is useful for any type of automation or testing.
 
 ## Script files
@@ -17,7 +23,7 @@ Win-auto-msg allows using text files to script the automation. The following is 
 files. Note that these files only allow basic automation (`press`, `type`, `sleep` and `loop`). For more advanced
 scripting, consider implementing C++ code that uses the API.
 
-###### press
+### press
 
 The basic `press` command in these files is defined with a button identifier, followed by a space, followed by a
 duration in seconds. For example, if we want the script to press the A key on the keyboard for 3 seconds, we would
@@ -52,12 +58,12 @@ press KEY_LBUTTON 0.5 100 200
 
 Note that the mouse coordinates are not relative to the screen, but to the window itself.
 
-###### type
+### type
 
 The type command allows a line of text to be organically typed. Think of it as shorthand for many press commands,
 specifically for letters.
 
-###### sleep
+### sleep
 
 The sleep command allows specifying a duration of time for which the script will sleep. During sleep, pressed button
 timers that have already started will still progress and end, but the script itself will pause. For example, the
@@ -79,7 +85,7 @@ sleep 3
 press KEY_c 2
 ```
 
-###### loop
+### loop
 
 The loop and endloop command allows a section of the script to repeat multiple times. For example, the following script
 will press the A key for 1 second once every 2 seconds.
@@ -91,12 +97,14 @@ sleep 2
 endloop
 ```
 
-###### Other remarks
+### Other remarks
 
-# todo
+## todo
 
 - [ ] script parsing
 - [ ] type command
 - [ ] optimize so that there is 1 timer for multiple subwindows
 - [ ] to implement typing for captial letters, need 2 keypresses on a single timer (one for shift, one for the letter,
   shift need to be pressed first!)
+- [ ] wake preempted background processes?
+- [ ] enable choosing a single subwindow
