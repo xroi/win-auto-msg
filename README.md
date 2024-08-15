@@ -103,8 +103,8 @@ endloop
 
 - [ ] script parsing
 - [ ] type command
-- [ ] optimize so that there is 1 timer for multiple subwindows
 - [ ] to implement typing for captial letters, need 2 keypresses on a single timer (one for shift, one for the letter,
   shift need to be pressed first!)
 - [ ] wake preempted background processes?
-- [ ] enable choosing a single subwindow
+- [ ] enable choosing a single subwindow.
+- [ ] add sendKey overload to take multiple keys at once, then at script parsing optimize so that it uses that.
