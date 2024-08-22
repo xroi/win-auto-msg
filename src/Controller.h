@@ -15,42 +15,46 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include "VKeys.h"
+#include "VKey.h"
 
 using std::string;
 using std::vector;
 
-class Messages {
+class Controller {
 public:
-    explicit Messages(HWND hwnd);
+    explicit Controller(HWND hwnd);
 
-    explicit Messages(const vector<HWND> &hwnds);
+    explicit Controller(const vector<HWND> &hwnds);
 
-    ~Messages();
+    ~Controller();
 
-    void sendKey(VKeys key, unsigned long durationMS) const;
+    void sendKey(VKey key, unsigned long durationMS) const;
 
-    void sendKeyTap(VKeys key) const;
+    void sendKeyTap(VKey key) const;
 
     void sendText(const string &text) const;
 
     static int getTapDurationMS() { return 100; }
+
+
 
 private:
     HANDLE hTimerQueue;
     vector<HWND> hwnds;
 
     struct CallbackParam {
-        Messages *messages;
-        VKeys key;
+        Controller *messages;
+        VKey key;
     };
 
     void postMessageToAll(UINT msg, WPARAM wParam, LPARAM lParam) const;
 
-    static LPARAM computeLParam(UINT repeatCount, UINT key, byte extended, byte contextCode, byte previousState,
+    static LPARAM computeLParam(UINT repeatCount, UINT key, byte extended,
+                                byte contextCode, byte previousState,
                                 byte transitionState);
 
     static void CALLBACK endKey(PVOID lpParam, BOOLEAN TimerOrWaitFired);
+
 };
 
 
