@@ -16,6 +16,7 @@
 #include <iostream>
 #include <vector>
 #include "VKey.h"
+#include "MType.h"
 
 using std::string;
 using std::vector;
@@ -34,6 +35,10 @@ public:
 
     void sendText(const string &text) const;
 
+    void sendMouse(MType type, unsigned long durationMS, int xCoord, int yCoord) const;
+
+    void sendMouseTap(MType type, int xCoord, int yCoord) const;
+
     static int getTapDurationMS() { return 100; }
 
 
@@ -43,17 +48,26 @@ private:
     vector<HWND> hwnds;
 
     struct CallbackParam {
-        Controller *messages;
-        VKey key;
+        Controller *controller;
+        int msg;
+        WPARAM wparam;
+        LPARAM lparam;
     };
 
     void postMessageToAll(UINT msg, WPARAM wParam, LPARAM lParam) const;
 
-    static LPARAM computeLParam(UINT repeatCount, UINT key, byte extended,
-                                byte contextCode, byte previousState,
-                                byte transitionState);
+    static LPARAM computeKbdLParam(UINT repeatCount, UINT key, byte extended,
+                                   byte contextCode, byte previousState,
+                                   byte transitionState);
 
-    static void CALLBACK endKey(PVOID lpParam, BOOLEAN TimerOrWaitFired);
+    static LPARAM computeMouseLParam(int xCoord, int yCoord);
+
+    static WPARAM computeMouseWParam();
+
+    // Sends the message with the parameters after durationMS time.
+    void initTimer(int msg, WPARAM wparam, LPARAM lparam, unsigned long durationMS) const;
+
+    static void CALLBACK timerCallback(PVOID lpParam, BOOLEAN TimerOrWaitFired);
 
 };
 
