@@ -17,6 +17,24 @@ that has the following message code.
 Usually, that message is sent to the foreground window. This application allows
 sending messages to any open window. This is useful for any type of automation or testing.
 
+## Features
+
+- Send automated keyboard and mouse messages to chosen background/foreground windows. 
+- Pick from a list all valid open top windows (Messages are sent to top window and all child windows).
+- Mouse locator utility for finding mouse coordinates.
+
+## Planned Features
+
+- [ ] script parsing
+- [ ] wake preempted background processes?
+- [ ] enable choosing a single subwindow.
+- [ ] add sendKey overload to take multiple keys at once, then at script parsing optimize so that it uses that.
+- [ ] mouse location tracker tool, for finding coordinates for automated mouse presses
+
+## Usage Exmaples
+
+- ...
+
 ## Script files
 
 Win-auto-msg allows using text files to script the automation. The following is a guideline to the format of these
@@ -97,12 +115,9 @@ sleep 2
 endloop
 ```
 
-### Other remarks
+## References & Acknowledgements
 
-## todo
+- [win32 Messages API](https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages)
+- [Keyboard](https://github.com/EasyAsABC123/Keyboard)
 
-- [ ] script parsing
-- [ ] wake preempted background processes?
-- [ ] enable choosing a single subwindow.
-- [ ] add sendKey overload to take multiple keys at once, then at script parsing optimize so that it uses that.
-- [ ] mouse location tracker tool, for finding coordinates for automated mouse presses
+
