@@ -2,7 +2,7 @@
 // Created by roi65 on Thu 15/08/2024.
 //
 
-#include "Controller.h"
+#include "Controller.hpp"
 
 
 Controller::Controller(HWND hwnd) {

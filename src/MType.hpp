@@ -2,8 +2,8 @@
 // Created by roi65 on Thu 22/08/2024.
 //
 
-#ifndef AUTO_WIN_MSG_MTYPE_H
-#define AUTO_WIN_MSG_MTYPE_H
+#ifndef AUTO_WIN_MSG_MTYPE_HPP
+#define AUTO_WIN_MSG_MTYPE_HPP
 
 enum MType {
     LButton,
@@ -11,4 +11,4 @@ enum MType {
     MButton
 };
 
-#endif //AUTO_WIN_MSG_MTYPE_H
+#endif //AUTO_WIN_MSG_MTYPE_HPP

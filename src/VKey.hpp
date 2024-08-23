@@ -2,8 +2,8 @@
 // Created by roi65 on Thu 15/08/2024.
 //
 
-#ifndef AUTO_WIN_MSG_VKEY_H
-#define AUTO_WIN_MSG_VKEY_H
+#ifndef AUTO_WIN_MSG_VKEY_HPP
+#define AUTO_WIN_MSG_VKEY_HPP
 
 enum VKey {
     KEY_0 = 0x30, //0 key
@@ -114,4 +114,4 @@ enum VKey {
     _NULL = 0x0,
 };
 
-#endif //AUTO_WIN_MSG_VKEY_H
+#endif //AUTO_WIN_MSG_VKEY_HPP

@@ -2,8 +2,8 @@
 // Created by roi65 on Thu 15/08/2024.
 //
 
-#ifndef AUTO_WIN_MSG_PROCESSES_H
-#define AUTO_WIN_MSG_PROCESSES_H
+#ifndef AUTO_WIN_MSG_WINDOWS_HPP
+#define AUTO_WIN_MSG_WINDOWS_HPP
 
 #include <windows.h>
 #include <string>
@@ -11,7 +11,7 @@
 #include <iostream>
 #include <algorithm>
 
-#include "VKey.h"
+#include "VKey.hpp"
 
 using std::string;
 using std::vector;
@@ -36,4 +36,4 @@ WindowTree getValidWindowTree();
 
 vector<HWND> chooseWindows();
 
-#endif //AUTO_WIN_MSG_PROCESSES_H
+#endif //AUTO_WIN_MSG_WINDOWS_HPP

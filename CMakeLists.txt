@@ -3,5 +3,10 @@ project(auto_win_msg)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(auto_win_msg src/main.cpp src/windows.cpp src/VKey.h src/Controller.cpp
-        src/Controller.h)
+add_executable(auto_win_msg
+        src/main.cpp
+        src/windows.cpp
+        src/VKey.hpp
+        src/Controller.cpp
+        src/Controller.hpp
+        src/MouseLocator.hpp)

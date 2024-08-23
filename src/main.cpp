@@ -3,8 +3,8 @@
 #include <vector>
 #include <string>
 
-#include "Controller.h"
-#include "windows.h"
+#include "Controller.hpp"
+#include "windows.hpp"
 
 using std::vector;
 using std::string;

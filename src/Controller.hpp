@@ -2,8 +2,8 @@
 // Created by roi65 on Thu 15/08/2024.
 //
 
-#ifndef AUTO_WIN_MSG_MESSAGES_C_H
-#define AUTO_WIN_MSG_MESSAGES_C_H
+#ifndef AUTO_WIN_MSG_CONTROLLER_HPP
+#define AUTO_WIN_MSG_CONTROLLER_HPP
 
 #ifdef NDEBUG
 #define DEBUG(x)
@@ -15,8 +15,8 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include "VKey.h"
-#include "MType.h"
+#include "VKey.hpp"
+#include "MType.hpp"
 
 using std::string;
 using std::vector;
@@ -72,4 +72,4 @@ private:
 };
 
 
-#endif //AUTO_WIN_MSG_MESSAGES_C_H
+#endif //AUTO_WIN_MSG_CONTROLLER_HPP
