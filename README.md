@@ -1,12 +1,12 @@
 # win-auto-msg
 
 A minimal low overhead C++ application for automatic sending
-of [windows controller](https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-controller) to
+of [windows messages](https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages) to
 background/foreground windows.
 
 **This project is still a draft in early stages**
 
-In windows, communication with applications is done by passing controller to them. A message is simply a numeric code that
+In windows, communication with applications is done by passing messages to them. A message is simply a numeric code that
 designates a particular event. For example, if the user presses the left mouse button, the window receives a message
 that has the following message code.
 
@@ -15,7 +15,7 @@ that has the following message code.
 ```
 
 Usually, that message is sent to the foreground window. This application allows
-sending controller to any open window. This is useful for any type of automation or testing.
+sending messages to any open window. This is useful for any type of automation or testing.
 
 ## Script files
 
@@ -33,7 +33,7 @@ write:
 press KEY_A 3
 ```
 
-Note that in practice this command will be translated to 2 controller, a down and an up command.
+Note that in practice this command will be translated to 2 messages, a down and an up command.
 
 A button can also be pressed indefinitely (i.e. by only issuing a down command) by using a `*` for the duration.
 
