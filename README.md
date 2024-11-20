@@ -6,6 +6,12 @@ background/foreground windows.
 
 **This project is still a draft in early stages**
 
+## Demo
+
+![](https://github.com/win-auto-msg/blob/master/assets/demo.gif)
+
+## General Information
+
 In windows, communication with applications is done by passing messages to them. A message is simply a numeric code that
 designates a particular event. For example, if the user presses the left mouse button, the window receives a message
 that has the following message code.
@@ -29,11 +35,8 @@ sending messages to any open window. This is useful for any type of automation o
 - [ ] wake preempted background processes?
 - [ ] enable choosing a single subwindow.
 - [ ] add sendKey overload to take multiple keys at once, then at script parsing optimize so that it uses that.
-- [ ] mouse location tracker tool, for finding coordinates for automated mouse presses
-
-## Usage Exmaples
-
-- ...
+- [ ] "recording" mode into scripts
+- [ ] prevent user effect of shift/ctrl keys on background windows
 
 ## Script files
 
