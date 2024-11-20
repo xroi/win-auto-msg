@@ -15,7 +15,11 @@ using std::string;
 
 void test(const Controller &controller) {
 
-    controller.sendMouseTap(LButton, 152, 244);
+//    while (true){
+//        controller.sendKeyTap(KEY_D);
+//        controller.sendMouseTap(LButton, 125, 218);
+//        Sleep(30000);
+//    }
 
 //    controller.sendKeyTap(KEY_A);
 //    Sleep(1000);
@@ -34,8 +38,9 @@ void test(const Controller &controller) {
 //    Sleep(1000);
 //    controller.sendKeyTap(KEY_RETURN);
 
-    //    typeText(childWindows, "THIS TEXT IS BEING TYPED ASYNCHRONOUSLY ON A BACKGROUND NOTEPAD WINDOW", hTimerQueue);
-    //    Sleep(10000);
+//    controller.sendText("wwWwwwwwwwwwwwwWwwwwwwwWwwwwwwww");
+    controller.sendText("This text is being typed asynchronously on a non-focused background window. Cool");
+    Sleep(1000);
 }
 
 void automation(){
@@ -62,12 +67,13 @@ int main() {
                 mouseLocatorUtil();
                 break;
             case 3:
+                printf("Not implemented :(\n");
+                break;
+            case 4:
             default:
                 exit(0);
         }
     }
-
-    return 0;
 }
 
 void printMenu() {
@@ -76,5 +82,6 @@ void printMenu() {
     printf("=========================\n");
     printf("1. Run Automation\n");
     printf("2. Mouse Locator Utility\n");
-    printf("3. Exit\n");
+    printf("3. Recording mode\n");
+    printf("4. Exit\n");
 }

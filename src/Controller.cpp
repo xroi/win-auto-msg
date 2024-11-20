@@ -32,7 +32,6 @@ void Controller::sendKey(VKey key, unsigned long durationMS) const {
     initTimer(callbackMsg, callbackWParam, callbackLParam, durationMS);
 }
 
-
 void Controller::initTimer(int msg, WPARAM wparam, LPARAM lparam,
                            unsigned long durationMS) const{
     HANDLE hTimer = nullptr;
@@ -46,27 +45,32 @@ void Controller::initTimer(int msg, WPARAM wparam, LPARAM lparam,
         DEBUG("CreateTimerQueueTimer failed (%d)");
         return;
     }
-    DEBUG("SetWaitableTimer sucess");
+//    DEBUG("SetWaitableTimer sucess");
 }
 
 
 void CALLBACK Controller::timerCallback(PVOID lpParam, BOOLEAN TimerOrWaitFired) {
     auto *callbackParam = (CallbackParam *) lpParam;
-    DEBUG("Timer triggered");
+//    DEBUG("Timer triggered");
 
     callbackParam->controller->postMessageToAll(callbackParam->msg, callbackParam->wparam, callbackParam->lparam);
     delete callbackParam;
 }
 
 
-void Controller::sendKeyTap(VKey key) const {
+void Controller::sendKeyTap(const VKey key) const {
     this->sendKey(key, getTapDurationMS());
 }
 
 void Controller::sendText(const string &text) const {
     for (const char &c: text) {
-        sendKeyTap((VKey) toupper(c));
-        // todo allow symbols, capital letters
+        VKeyMapping vKeyMapping = CharToVKeyMap.at(c);
+        if (vKeyMapping.requiresShift){
+//            DEBUG("SHIFTING"); // todo doesn't work
+            this->sendKeyTap(VKey::KEY_CAPITAL);
+        }
+        this->sendKeyTap(vKeyMapping.key);
+        Sleep(getTapDurationMS());
     }
 }
 
