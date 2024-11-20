@@ -8,7 +8,7 @@ background/foreground windows.
 
 ## Demo
 
-![](https://github.com/win-auto-msg/blob/master/assets/demo.gif)
+![](https://github.com/xroi/win-auto-msg/blob/master/assets/demo.gif)
 
 ## General Information
 
