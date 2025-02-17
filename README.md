@@ -4,7 +4,7 @@ A minimal low overhead C++ application for automatic sending
 of [windows messages](https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages) to
 background/foreground windows.
 
-**This project is still a draft in early stages**
+**This project is still a work in progress**
 
 ## Demo
 
