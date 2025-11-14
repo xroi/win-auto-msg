@@ -1,6 +1,6 @@
 # win-auto-msg
 
-A minimal low overhead C++ application for automatic sending
+A minimal C++ application for automatic sending
 of [windows messages](https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages) to
 background/foreground windows.
 
